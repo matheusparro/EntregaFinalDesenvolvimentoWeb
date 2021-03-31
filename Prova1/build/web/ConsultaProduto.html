@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/globals.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="global.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <span  class="dropdown-button">Cadastros</span>
+            <div class="dropdown-content">
+                <a href="ConsultaCategoria.html">Categorias</a>
+                <a href="ConsultaProduto.html">Produtos</a>
+                <a href="CadastroProduto.html">Produto Formulário</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        
+        <div class="search">
+            <div style="width: 50%;">
+                <h3>Id</h3>
+                <input style="width: 50%;"/>
+            </div>
+            <div style="width: 50%;">
+                <h3>Descrição</h3>
+                <input style="width: 50%;"/>
+                <button type="button" class="salvar">Salvar</button>
+               
+            </div>
+            <div style="height:80%;align-self:flex-end;width: 10%"><a style="width: 100%" class="primary-button"
+                href="categoryForm.html">Novo</a></div>
+        
+        </div>
+        <table style="width:100%">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Estoque</th>
+                <th>Categoria</th>
+            </tr>
+        <tbody id="produtos">
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>10.89</td>
+                <td>150</td>
+            <td><button type="button" class="alterar">Alterar</button></td>
+                <td><button type="button" class="excluir">Excluir</button></td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>10.89</td>
+                <td>150</td>
+                <td><button type="button" class="alterar">Alterar</button></td>
+                <td><button type="button" class="excluir">Excluir</button></td>
+            </tr>
+        </tbody>
+
+        </table>
+    </div>
+    <footer>Copyright @ livre</footer>
+  
+</body>
+</html>
