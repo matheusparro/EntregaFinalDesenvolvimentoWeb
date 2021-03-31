@@ -28,22 +28,29 @@ public class Produto implements Serializable {
     private Long id;
     private String descricao;
     private long valor;
-    private long qtdEstoque;
+    private long qtdestoque;
     
     @ManyToOne
-    @JoinColumn(name="categoria_id")
     private Categoria categoria;
 
-    public Produto(String descricao, long valor, long qtdEstoque, Categoria categoria) {
+    public Produto(Long id, String descricao, Long valor, Long qtdestoque, Categoria categoria) {
+        this.id = id;
         this.descricao = descricao;
         this.valor = valor;
-        this.qtdEstoque = qtdEstoque;
+        this.qtdestoque = qtdestoque;
+        this.categoria = categoria;
+    }
+
+    public Produto(String descricao, Long valor, Long qtdestoque, Categoria categoria) {
+        this.descricao = descricao;
+        this.valor = valor;
+        this.qtdestoque = qtdestoque;
         this.categoria = categoria;
     }
 
     @Override
     public String toString() {
-        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", valor=" + valor + ", qtdEstoque=" + qtdEstoque + ", categoria=" + categoria + '}';
+        return "Produto{" + "id=" + id + ", descricao=" + descricao + ", valor=" + valor + ", qtdestoque=" + qtdestoque + ", categoria=" + categoria + '}';
     }
 
        

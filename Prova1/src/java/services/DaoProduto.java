@@ -48,7 +48,7 @@ public class DaoProduto {
     public static List<Produto> getAll(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Prova1PU");
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Produto> tq = em.createQuery("select c  from Produto c", Produto.class);
+        TypedQuery<Produto> tq = em.createQuery("SELECT c FROM Produto c", Produto.class);
         return tq.getResultList();
     }
     

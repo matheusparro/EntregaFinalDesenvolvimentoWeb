@@ -42,7 +42,7 @@ public class DaoCategoria {
 
     
    public static boolean excluir(Long pId) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TrabalhoJPAPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Prova1PU");
         EntityManager em = emf.createEntityManager();
         Categoria cg = em.find(Categoria.class, pId);
         try {

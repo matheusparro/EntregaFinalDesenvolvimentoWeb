@@ -32,7 +32,6 @@ and open the template in the editor.
                  $.ajax({
                         type: "DELETE",
                         url: `http://localhost:8080/Prova1/webresources/categoria/excluir/${id}`,
-                        data: payload,
                         dataType: 'json',
                         contentType: "application/json; charset=utf-8",
                         success: function (data, status) {
@@ -92,8 +91,9 @@ and open the template in the editor.
                 <span  class="dropdown-button">Cadastros</span>
                 <div class="dropdown-content">
                     <a href="ConsultaCategoria.html">Categorias</a>
-                    <a href="ConsultaProduto.html">Produtos</a>
-                    <a href="CadastroProduto.html">Produto Formulário</a>
+                <a href="CadastroCategoria.html">Categoria Formulário</a>
+                <a href="ConsultaProduto.html">Produtos</a>
+                <a href="CadastroProduto.html">Produto Formulário</a>
                 </div>
             </div>
         </header>
@@ -111,7 +111,7 @@ and open the template in the editor.
 
                 </div>
                 <div style="height:80%;align-self:flex-end;width: 10%"><a style="width: 100%" class="primary-button"
-                                                                          href="categoryForm.html">Novo</a></div>
+                                                                          href="CadastroCategoria.html">Novo</a></div>
 
             </div>
             <table style="width:100%">

@@ -47,6 +47,8 @@ public class ProdutoResource {
       Gson gson = new Gson();
       return gson.toJson(DaoProduto.getAll());     
     }
+    
+    
 
     /**
      * PUT method for updating or creating an instance of ProdutoResource

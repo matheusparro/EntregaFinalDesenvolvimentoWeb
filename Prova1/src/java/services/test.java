@@ -15,8 +15,8 @@ import models.Produto;
 public class test {
     public static void main(String[] args) {
         // CLASSE PARA TESTAR O JPA 
-        Categoria ct2 = DaoCategoria.getOne(Long.parseLong("1"));
-        Produto cont = new Produto("teste2", 0, 0, ct2);
-        DaoProduto.persist(cont);
+//        Categoria ct2 = DaoCategoria.getOne(Long.parseLong("1"));;
+//        Produto cont = new Produto("teste2", 0, 0, ct2);
+//        DaoProduto.persist(cont);
    }
 }
