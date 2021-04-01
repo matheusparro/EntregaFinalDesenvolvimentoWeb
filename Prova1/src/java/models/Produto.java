@@ -33,20 +33,25 @@ public class Produto implements Serializable {
     @ManyToOne
     private Categoria categoria;
 
-    public Produto(Long id, String descricao, Long valor, Long qtdestoque, Categoria categoria) {
-        this.id = id;
-        this.descricao = descricao;
-        this.valor = valor;
-        this.qtdestoque = qtdestoque;
-        this.categoria = categoria;
-    }
-
+//    public Produto(Long id, String descricao, Long valor, Long qtdestoque, Categoria categoria) {
+//        this.id = id;
+//        this.descricao = descricao;
+//        this.valor = valor;
+//        this.qtdestoque = qtdestoque;
+//        this.categoria = categoria;
+//    }
+//
     public Produto(String descricao, Long valor, Long qtdestoque, Categoria categoria) {
         this.descricao = descricao;
         this.valor = valor;
         this.qtdestoque = qtdestoque;
         this.categoria = categoria;
     }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
 
     @Override
     public String toString() {

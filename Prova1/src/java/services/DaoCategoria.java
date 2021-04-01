@@ -37,6 +37,7 @@ public class DaoCategoria {
       EntityManagerFactory emf = Persistence.createEntityManagerFactory("Prova1PU");  
       EntityManager em = emf.createEntityManager();
       return em.find(Categoria.class, pId);    
+     
     }   
     
 

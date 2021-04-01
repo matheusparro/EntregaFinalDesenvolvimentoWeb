@@ -16,6 +16,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import models.Categoria;
 import models.Produto;
 
 /**
@@ -59,11 +62,19 @@ public class ProdutoResource {
     public void putXml(String content) {
     }
     
-    @POST
-    @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)//VER COMO INSERIR A FOREIGN KEY NA PARADA SEPAASSA O ID DIRETO OU DENTRO DO COTENT
+    public Categoria getCategoria(Long id) {        
+        Categoria ct = new Categoria();
+        ct = DaoCategoria.getOne(id);
+        return ct;     
+    }
+    
+   @POST
+    @Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
     public boolean inserirProduto(String content) {
         Gson gson = new Gson();
+        JsonObject convertedObject = gson.fromJson(content, JsonObject.class);
         Produto ca = (Produto) gson.fromJson(content, Produto.class);
+        ca.setCategoria(DaoCategoria.getOne(Long.parseLong(convertedObject.get("categoria_id").getAsString())));
         return DaoProduto.persist(ca);
     }
     
