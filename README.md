@@ -12,7 +12,7 @@
 
 <br>
 
-## Sobre o Move.it
+## Sobre o trabalho
 
 Uma aplicação para colocar em pratica o conteudo que foi passado durante o semestre, uma aplicacao java utilizando jpa e front end utilizando ajax e jquery
 
@@ -24,10 +24,10 @@ Uma aplicação para colocar em pratica o conteudo que foi passado durante o sem
 
 Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
-- [Java](https://www.java.com/pt-BR/)
+- [Java (JDK 1.8)](https://www.java.com/pt-BR/)
 - [NetBeans versão 11.2](https://nextjs.org/)
 - [Gson](https://www.typescriptlang.org/)
-- [GlassFish versão](https://styled-components.com/)
+- [GlassFish versão 5.1.0](https://styled-components.com/)
 
 <br>
 
@@ -35,9 +35,9 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
 ```bash
 # Abra um terminal e clone este repositório com o comando
-git clone https://github.com/martins-rafael/entregafinaldesenvolvimentoweb.git
+git clone https://github.com/matheusparro/entregafinaldesenvolvimentoweb.git
 # ou use a opção de download.
-# Configure sua da base como o nome Prova01
+# Configure sua da base dados PostGres como o nome Prova01 e o persistence.xml do projeto
 # Execute o projeto
 ```
 
