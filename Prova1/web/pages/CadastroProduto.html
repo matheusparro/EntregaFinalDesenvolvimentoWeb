@@ -11,6 +11,7 @@
         <title>Document</title>
 
         <script>
+            let produtoAntigo
             async function buscaCategorias() {
                 $.ajax({
                     url: "http://localhost:8080/Prova1/webresources/categoria",
@@ -22,13 +23,12 @@
                 });
             }
 
-
             async  function display(dados) {
 
                 var text = "";
                 for (ob in dados) {
-                    text +=`<option value="${dados[ob].id}">${dados[ob].descricao}</option>`
-                     
+                    text += `<option value="${dados[ob].id}">${dados[ob].descricao}</option>`
+
                 }
                 document.getElementById("combobox").innerHTML = text;
             }
@@ -38,29 +38,57 @@
             $(document).ready(async () => {
                 await buscaCategorias()
 
-                //                $(".salvar").click(function () {
-                //                    var payload = {
-                //                        id: $("#id").val(),
-                //                        descricao: $("#descricao").val(),
-                //                    };
-                //
-                //                    payload = JSON.stringify(payload);
-                //
-                //                    $.ajax({
-                //                        type: "PUT",
-                //                        url: "http://localhost:8080/Prova1/webresources/categoria",
-                //                        data: payload,
-                //                        dataType: 'json',
-                //                        contentType: "application/json; charset=utf-8",
-                //                        success: function (data, status) {
-                //                            alert('inserido com sucesso ');
-                //                            buscaCategorias()
-                //                        }
-                //                    });
-                //                });
+                $(".salvar1").click(function () {
+                    var payload = {
 
+                        descricao: $("#descricao").val(),
+                        qtdestoque: $("#estoque").val(),
+                        valor: $("#preco").val(),
+                        categoria_id: $("#combobox").val(),
+                    };
+                    if (produtoAntigo) {
+                        payload.id = produtoAntigo.id
+                    }
 
+                    payload = JSON.stringify(payload);
+                    $.ajax({
+                        type: produtoAntigo ? "PUT" : "POST",
+                        url: "http://localhost:8080/Prova1/webresources/produto",
+                        data: payload,
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data, status) {
+                            alert('Produto inserido com sucesso ');
+
+                        }
+                    });
+                });
+
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const id = urlParams.get('id')
+
+                if (queryString) {
+                    $.ajax({
+                        url: `http://localhost:8080/Prova1/webresources/produto/${id}`,
+                        type: 'GET',
+                        dataType: 'json', // added data type
+                        success: async function (res) {
+                            produtoAntigo = res
+                            $("#descricao").val(res.descricao);
+                            $("#estoque").val(res.qtdEstoque);
+                            $("#preco").val(res.valor);
+                            $("#combobox").val(res.categoria.id);
+                        }
+                    });
+                }
+
+                 $(".salvar").click(function () {
+                   window.location.href= "http://localhost:8080/Prova1/pages/ConsultaProduto.html"
+                });
             })
+
+
 
         </script>
     </head>
@@ -81,22 +109,22 @@
             <div class="">
                 <div style="width: 100%; max-width: 720px">
                     <h3 class="inputForm">Descrição</h3>
-                    <input class="inputForm" style="width: 100%;"/>
+                    <input id="descricao" class="inputForm" style="width: 100%;"/>
 
                     <h3 class="inputForm">Categoria</h3>
                     <select name="combo" id="combobox" style="width:100%; height:30px;">
-                        
+
                     </select>
 
                     <h3 class="inputForm">Preço</h3>
-                    <input class="inputForm" style="width: 100%;"/>
+                    <input id="preco" class="inputForm" style="width: 100%;"/>
 
                     <h3 class="inputForm">Estoque</h3>
-                    <input class="inputForm" style="width: 100%;"/>
+                    <input id="estoque" class="inputForm" style="width: 100%;"/>
 
                     <div style="margin-top: 15px; display: flex; justify-content: space-between;">
                         <button class="salvar1">Salvar</button>
-                        <button class="salvar" style="background: red  !important;">Cancelar</button>
+                        <button class="salvar" style="background: red!important;">Cancelar</button>
                     </div>
                 </div>
 

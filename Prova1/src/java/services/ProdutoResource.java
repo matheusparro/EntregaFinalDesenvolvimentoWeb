@@ -18,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import javax.ws.rs.DELETE;
 import models.Categoria;
 import models.Produto;
 
@@ -89,11 +90,13 @@ public class ProdutoResource {
     }
     
     @Path("excluir/{produtoId}")
-    @PUT
+    @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
     public boolean excluir(@PathParam("produtoId") String id) {
       return DaoProduto.excluir(Long.parseLong(id));
     }    
+    
+
      
     
     @PUT
