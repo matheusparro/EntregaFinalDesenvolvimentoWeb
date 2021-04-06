@@ -37,7 +37,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 # Abra um terminal e clone este repositório com o comando
 git clone https://github.com/matheusparro/entregafinaldesenvolvimentoweb.git
 # ou use a opção de download.
-# Configure sua da base dados PostGres como o nome Prova01 e o persistence.xml do projeto
+# Configure sua da base dados PostGres como o nome Prova01 e o persistence.xml do projeto - teste no navegador EDGE ou Firefox
 # Execute o projeto
 ```
 
